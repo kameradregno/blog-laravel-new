@@ -11,9 +11,15 @@ class PostsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(PostsRequest $request,Posts $post)
     {
-        
+        $data = [
+            'title'     => $post->title,
+            'content'   => $post->content,
+            'image'     => $post->image
+        ];
+
+        return view('posts.index', $data);
     }
 
     /**
