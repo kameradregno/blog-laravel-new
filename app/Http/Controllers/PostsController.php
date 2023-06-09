@@ -42,7 +42,7 @@ class PostsController extends Controller
 
         Posts::create([
             'title'     => $title,
-            'content'   => $request->input('konten'),
+            'content'   => $request->input('content'),
             'user_id'   => Auth::user()->id,
             'slug'      => $this->makeSlug($title),
             'image'     => $request->file('image')->store('berita')
