@@ -57,7 +57,7 @@ class PostsController extends Controller
      */
     public function show($slug)
     {
-        $post_id = Posts::where('slug', $slug)->first();
+        $post_id = Posts::selectBySlug($slug)->first();
 
         $data = [
             'post' => $post_id,
@@ -71,8 +71,7 @@ class PostsController extends Controller
      */
     public function edit($slug)
     {
-        $post_id = Posts::where('slug', $slug)->first();
-
+        $post_id = Posts::selectBySlug($slug)->first();
         $data = [
             'post' => $post_id
         ];
@@ -85,7 +84,7 @@ class PostsController extends Controller
      */
     public function update(Request $request, $slug)
     {
-        $post = Posts::where('slug', $slug)->first();
+        $post = Posts::selectBySlug($slug)->first();
         $new_slug = $this->makeSlug($request['title']);
 
         if (empty($request->image)) {
