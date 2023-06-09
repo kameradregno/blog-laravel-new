@@ -70,9 +70,15 @@ class PostsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Posts $posts)
+    public function edit($slug)
     {
-        //
+        $post_id = Posts::where('slug', $slug)->first();
+
+        $data = [
+            'post' => $post_id
+        ];
+
+        return view('posts.edit', $data);
     }
 
     /**
