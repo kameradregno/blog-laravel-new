@@ -1,10 +1,12 @@
 @extends('layouts.app')
+
 @section('title', 'Buat Blog')
 
 @section('content')
 
     <h1 class="my-4">Buat Blog</h1>
 
+    
     <form method="POST" action="{{ route('store') }}" enctype="multipart/form-data">
         <div class="mb-3">
             <label class="form-label">Judul</label>
@@ -13,7 +15,7 @@
 
         <div class="mb-3">
             <label class="form-label">Konten</label>
-            <textarea class="form-control" name="content" id="content"></textarea>
+            <textarea type="text" class="form-control" name="content" id="content"></textarea>
         </div>
 
         <div class="mb-3">
@@ -27,13 +29,13 @@
 
     </form>
 
-
-
-
-
-
-
-
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#content'))
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
 
 
 @endsection
