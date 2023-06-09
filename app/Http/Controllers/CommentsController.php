@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CommentCreateRequest;
 use App\Models\Comments;
 use Illuminate\Http\Request;
 
@@ -18,9 +19,15 @@ class CommentsController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(CommentCreateRequest $request)
     {
-        //
+       $comment = comments::create([
+            'comment' => $request->comment,
+            'user_id' => auth()->user()->id,
+            'post_id' => $request->post_id,
+        ]);
+
+        return redirect()->back()->with('success', 'Comment berhasil ditambahkan');
     }
 
     /**
