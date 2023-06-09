@@ -7,7 +7,8 @@
     <h1 class="my-4">Buat Blog</h1>
 
     
-    <form method="POST" action="{{ route('store') }}" enctype="multipart/form-data">
+    <form method="POST" action="{{ route('posts') }}" enctype="multipart/form-data">
+        @csrf
         <div class="mb-3">
             <label class="form-label">Judul</label>
             <input type="text" class="form-control" id="title" name="title">
