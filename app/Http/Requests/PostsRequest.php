@@ -12,7 +12,7 @@ class PostsRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return Auth::check();
+        return false;
     }
 
     /**
