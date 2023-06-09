@@ -7,6 +7,7 @@ use App\Http\Requests\PostsRequest;
 use App\Models\Posts;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class PostsController extends Controller
 {
@@ -84,9 +85,29 @@ class PostsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Posts $posts)
+    public function update(Request $request, $slug)
     {
-        //
+        $post = Posts::where('slug', $slug)->first();
+        $new_slug = $this->makeSlug($request['title']);
+
+        if (empty($request->image)) {
+            $post->update([
+                'title' => $request['title'],
+                'content' => $request['content'],
+                'slug' => $new_slug,
+            ]);
+            return redirect("posts/$new_slug");
+        } else {
+            Storage::delete($post->image);
+            $post->update([
+                'title' => $request['title'],
+                'content' => $request['content'],
+                'slug' => $new_slug,
+                'image' => $request->file('image')->store('berita')
+            ]);
+            return redirect("posts/$new_slug");
+        }
+
     }
 
     /**
