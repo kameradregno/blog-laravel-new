@@ -19,7 +19,7 @@ class PostsController extends Controller
             'post' => $posts
         ];
 
-        return view('posts.index', $data);
+        return view('app.main.index', $data);
     }
 
     /**
@@ -27,7 +27,7 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        return view('app.main.create');
     }
 
     /**
