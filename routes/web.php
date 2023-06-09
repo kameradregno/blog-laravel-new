@@ -25,13 +25,12 @@ Route::get('/', function () {
 
 Route::get('posts', [PostsController::class, 'index'])->name('posts');
 
-Route::get('posts/create', [PostController::class, 'create']);
-Route::patch('posts/{slug}', [PostController::class, 'show'])->name('show');
-Route::post('posts/{slug}', [PostController::class, 'store']);
-
-Route::get('posts/{slug}/edit', [PostController::class, 'edit']);
-Route::patch('posts/{slug}', [PostController::class, 'update']);
-Route::delete('posts/{slug}', [PostsController::class, 'delete']);
+Route::get('posts/create', [PostsController::class, 'create'])->name('create');
+Route::get('posts/{slug}', [PostsController::class, 'show'])->name('show');
+Route::post('posts', [PostsController::class, 'store'])->name('store');
+Route::get('posts/{slug}/edit', [PostsController::class, 'edit'])->name('edit');
+Route::patch('posts/{slug}', [PostsController::class, 'update'])->name('update');
+Route::delete('posts/{slug}', [PostsController::class, 'delete'])->name('delete');
 
 // Comment
 
