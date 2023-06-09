@@ -25,7 +25,7 @@ Route::get('/', function () {
 Route::get('posts', [PostsController::class, 'index'])->name('posts');
 
 Route::get('posts/create', [PostController::class, 'create']);
-Route::patch('posts/{slug}', [PostController::class, 'show']);
+Route::patch('posts/{slug}', [PostController::class, 'show'])->name('show');
 Route::post('posts/{slug}', [PostController::class, 'store']);
 
 Route::get('posts/{slug}/edit', [PostController::class, 'edit']);

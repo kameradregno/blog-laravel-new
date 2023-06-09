@@ -14,7 +14,8 @@
                         {{ date('d M Y H:i', strtotime($p->created_at)) }}
                     </small>
                 </p>
-                <a href="{{}}"></a>
+                <a href="{{route('show')}}" class="btn btn-success">Selengkapnya</a>
+                <a href="{{route('edit')}}" class="btn btn-warning">Edit</a>
             </div>
         </div>
     </div>
