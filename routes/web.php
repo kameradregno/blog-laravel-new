@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CommentsController;
 use App\Http\Controllers\PostsController;
 use App\Models\Posts;
 use Illuminate\Support\Facades\Route;
@@ -34,3 +35,4 @@ Route::delete('posts/{slug}', [PostsController::class, 'delete']);
 
 // Comment
 
+Route::post('comments', [CommentsController::class, 'comments']); 
