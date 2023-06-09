@@ -15,9 +15,7 @@ class Comments extends Model
         'user_id', 'post_id', 'content'
     ];
 
-<<<<<<< HEAD
     
-=======
     /**
      * Get the user associated with the Comments
      *
@@ -27,5 +25,4 @@ class Comments extends Model
     {
         return $this->hasOne(User::class, 'id', 'user_id');
     }
->>>>>>> 1ad8e31d48e4ea86f2161d374ed9fbc47c95a72e
 }
