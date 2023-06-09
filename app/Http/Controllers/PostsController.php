@@ -11,7 +11,7 @@ class PostsController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(PostsRequest $request,Posts $post)
+    public function index(Posts $post)
     {
         $data = [
             'title'     => $post->title,
