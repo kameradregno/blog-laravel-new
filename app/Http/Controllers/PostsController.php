@@ -57,13 +57,11 @@ class PostsController extends Controller
      */
     public function show($slug)
     {
-        $post_id      = Posts::where('slug', $slug)->first();
+        $post_id = Posts::where('slug', $slug)->first();
 
         $data = [
-            'post'               => $post_id,
+            'post' => $post_id,
         ];
-
-
 
         return view('posts.show', $data);
     }
