@@ -6,12 +6,13 @@
 
 <article class="blog-post mt-5">
     <h2 class="blog-post-title mb-1">{{$post->title}}</h2>
-    <p class="blog-post-meta">{{ date('d M Y H:i', strtotime($post->created_at)) }}</p>
+    <p>{{ $post->content }}</p>
+    <p class="blog-post-meta">Created at : {{ date('d M Y', strtotime($post->created_at)) }}</p>
 
     <p>{{$post->content}}</p>
 </article>
 
-<p class="text-muted">{{ $total_comments }} Komentar</p>
+{{-- <p class="text-muted">{{ $total_comments }} Komentar</p>
 
 @foreach ($comments->take(1) as $comment)
         <div class="card mb-3">
@@ -26,9 +27,9 @@
                 </blockquote>
             </div>
         </div>
-    @endforeach
+    @endforeach --}}
 
-    @if ($comments->count() > 1)
+    {{-- @if ($comments->count() > 1)
 
         <div class="position-relative">
             <a class="position-absolute top-50 start-50 translate-middle" id="showAllComments">Show All Comments</a>
@@ -49,7 +50,7 @@
                     </div>
                 </div>
             @endforeach
-        </div> --}}
+        </div>  --}}
 
 <a href="{{ route('posts') }}">Back</a>
 
