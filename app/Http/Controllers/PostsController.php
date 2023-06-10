@@ -47,7 +47,7 @@ class PostsController extends Controller
 
         Posts::create($data);
 
-        return view('posts.show');
+        return redirect('posts');
     }
 
     /**
