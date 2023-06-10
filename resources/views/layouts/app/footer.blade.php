@@ -1,4 +1,4 @@
-    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top fixed-bottom">
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 border-top bg-white">
         <div class="col-md-4 d-flex align-items-center">
             <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
                 <svg class="bi" width="30" height="24">
@@ -8,7 +8,7 @@
             <span class="mb-3 mb-md-0 text-body-secondary">© 2023 News-ku, Corp</span>
         </div>
 
-        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex me-5">
+        <ul class="nav col-md-4 justify-content-end list-unstyled d-flex me-5 my-3">
             <li class="ms-3"><a class="text-body-secondary" href="#"><svg width="24" height="24"
                         viewBox="0 0 48 48" id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg">
                         <defs>

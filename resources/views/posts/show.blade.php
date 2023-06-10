@@ -10,7 +10,7 @@
 
     <p>{{$post->content}}</p>
 </article>
-{{-- 
+
 <p class="text-muted">{{ $total_comments }} Komentar</p>
 
 @foreach ($comments->take(1) as $comment)
