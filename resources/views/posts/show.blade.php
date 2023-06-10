@@ -5,9 +5,9 @@
 @section('content')
 
 <article class="blog-post mt-5">
-    <h2 class="blog-post-title mb-1">{{$post->title}}</h2>
-    <p>{{ $post->content }}</p>
-    <p class="blog-post-meta">Created at : {{ date('d M Y', strtotime($post->created_at)) }}</p>
+    <h2 class="blog-post-title mb-1">{{$data->title}}</h2>
+    <p>{{ $data->content }}</p>
+    <p class="blog-post-meta">Created at : {{ date('d M Y', strtotime($data->created_at)) }}</p>
 
     <p>{{$data->content}}</p>
 </article>
@@ -54,7 +54,5 @@
         </div>  --}}
 
 <a href="{{ route('posts') }}">Back</a>
-
-
 
 @endsection
