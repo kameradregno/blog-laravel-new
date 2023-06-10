@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\PostCreateRequest;
-use App\Http\Requests\PostsRequest;
 use App\Models\Posts;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Http\Requests\PostsRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
@@ -36,20 +36,15 @@ class PostsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(PostCreateRequest $request)
+    public function store(PostsRequest $request)
     {
-        $title = $request->input('title'); // Ambil judul dari input
+        $data = $request->all();
+        $data['user_id'] = Auth::user()->id;
+        $data['slug'] = Str::slug($request->title);
 
+        Posts::create([$data]);
 
-        Posts::create([
-            'title'     => $title,
-            'content'   => $request->input('content'),
-            'user_id'   => Auth::user()->id,
-            'slug'      => $this->makeSlug($title),
-            'image'     => $request->file('image')->store('berita')
-        ]);
-
-        return redirect('posts');
+        return view('posts.show');
     }
 
     /**

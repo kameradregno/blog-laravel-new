@@ -10,8 +10,8 @@
             <form method="POST" action="{{ route('register') }}">
             @csrf
             <div class="mb-3">
-                <label for="name" class="form-label">Nama</label>
-                <input type="text" class="form-control" name="name" id="name" value="{{ old('name') }}">
+                <label for="username" class="form-label">Nama</label>
+                <input type="text" class="form-control" name="username" id="username" value="{{ old('username') }}">
             </div>
             
             <div class="mb-3">
