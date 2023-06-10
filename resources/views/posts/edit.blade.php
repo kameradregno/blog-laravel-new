@@ -7,6 +7,7 @@
     <h1 class="my-4">Edit Blog</h1>
 
     <form method="POST" action="{{ url("posts/$post->slug") }}" enctype="multipart/form-data">
+        @method('patch')
         @csrf
         <div class="mb-3">
             <label class="form-label">Judul</label>
