@@ -55,7 +55,7 @@ class PostsController extends Controller
      */
     public function show($slug)
     {
-        $post = Posts::selectBySlug($slug)->first();
+        $post = Posts::where('slug', $slug)->first();
 
         $data = [
             'post' => $post,
