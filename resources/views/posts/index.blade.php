@@ -16,9 +16,9 @@
                     </small>
                 </p>
                 <a href="{{route('show', $p->slug)}}" class="btn btn-success">Selengkapnya</a>
-                <a href="#" class="btn btn-warning">Edit</a>
+                <a href="{{ route('edit' , $p->slug) }}" class="btn btn-warning">Edit</a>
             </div>
-        </div>
+        </div>  
     </div>
     @endforeach
 
