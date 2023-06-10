@@ -24,7 +24,6 @@
                 <div class="card-body">
                     <h5 class="card-title">{{ $p->title }}</h5>
                     <p class="card-text">
-                        <br>
                         <small class="muted">Created at
                             {{ date('d M Y H:i', strtotime($p->created_at)) }}
                         </small>
