@@ -41,8 +41,7 @@
                     @csrf
                     Logout
                 </form></li>
-            
-            
+                <li><a href="{{ route('posts') }}" class="dropdown-item">Your Own Post</a></li>
                 @endguest
 
         </ul>
