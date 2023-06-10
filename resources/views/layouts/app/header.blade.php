@@ -8,7 +8,7 @@
                 </svg>
             </a>
         </div>
-        
+
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
             <li><a href="#" class="nav-link px-2 link-secondary">Home</a></li>
             <li><a href="#" class="nav-link px-2">Features</a></li>
@@ -18,9 +18,17 @@
         </ul>
 
         <div class="col-md-3 text-end">
-            <a href="{{ route('login') }}" class="btn btn-outline-primary me-2">Login</a>
-            <a href="{{ route('register') }}" class="btn btn-primary">Sign-up</a>
-            <a href="{{ route('create') }}" class="btn btn-primary">+ Buat Blog</a>
+            @guest
+                <a href="{{ route('login') }}" class="btn btn-outline-primary me-2">Login</a>
+                <a href="{{ route('register') }}" class="btn btn-primary">Sign-up</a>
+            @else
+                <a href="{{ route('create') }}" class="btn btn-primary">+ Buat Blog</a>
+                <form action="{{ route('logout') }}" method="POST" class="btn btn-warning">
+                    @csrf
+                    Logout
+                </form>
+            @endguest
         </div>
-    </header>
+</div>
+</header>
 </div>

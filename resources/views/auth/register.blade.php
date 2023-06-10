@@ -3,12 +3,18 @@
 @section('title', 'Daftar')
 
 @section('content')
+@if (session()->has('error_message'))
+    <div class="alert alert-danger">
+        {{session()->get('error_message')}}
+    </div>
+@endif
     
     <div class="card">
         <div class="card-header">Daftar</div>
         <div class="card-body">
             <form method="POST" action="{{ route('register') }}">
             @csrf
+            
             <div class="mb-3">
                 <label for="username" class="form-label">Nama</label>
                 <input type="text" class="form-control" name="username" id="username" value="{{ old('username') }}">
