@@ -45,7 +45,7 @@ class PostsController extends Controller
         $data['user_id'] = Auth::user()->id;
         $data['slug'] = Str::slug($request->title);
 
-        Posts::create([$data]);
+        Posts::create($data);
 
         return view('posts.show');
     }
