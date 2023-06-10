@@ -26,6 +26,7 @@
                     </p>
                     <a href="{{ route('show', $p->slug) }}" class="btn btn-success">Selengkapnya</a>
                     <a href="{{ route('edit', $p->slug) }}" class="btn btn-warning">Edit</a>
+                    <a href="{{ route('delete', $p->slug) }}" class="btn btn-warning">delete</a>
                 </div>
             </div>
         </div>

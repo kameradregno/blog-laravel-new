@@ -30,7 +30,7 @@ Route::get('posts/{slug}', [PostsController::class, 'show'])->name('show');
 Route::post('posts', [PostsController::class, 'store'])->name('store');
 Route::get('posts/{slug}/edit', [PostsController::class, 'edit'])->name('edit');
 Route::patch('posts/{slug}', [PostsController::class, 'update'])->name('update');
-Route::delete('posts/{slug}', [PostsController::class, 'delete'])->name('delete');
+Route::delete('posts/{slug}', [PostsController::class, 'destroy'])->name('delete');
 
 // Comment
 
