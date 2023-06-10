@@ -8,8 +8,6 @@
     <h2 class="blog-post-title mb-1">{{$data->title}}</h2>
     <p>{{ $data->content }}</p>
     <p class="blog-post-meta">Created at : {{ date('d M Y', strtotime($data->created_at)) }}</p>
-
-    <p>{{$data->content}}</p>
 </article>
 
 {{-- <p class="text-muted">{{ $total_comments }} Komentar</p>
