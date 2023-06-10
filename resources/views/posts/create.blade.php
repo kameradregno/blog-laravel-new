@@ -4,6 +4,9 @@
 
 @section('content')
 
+    <br>
+    <br>
+
     <h1 class="my-4">Buat Blog</h1>
 
     
