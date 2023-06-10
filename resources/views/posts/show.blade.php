@@ -5,8 +5,8 @@
 @section('content')
 
 <article class="blog-post mt-5">
-    <h2 class="blog-post-title mb-1">{{$data->title}}</h2>
-    <p>{{ $data->content }}</p>
+    <h2 class="blog-post-title mb-4">{{$data->title}}</h2>
+    <p class="fs-5">{{ $data->content }}</p>
     <p class="blog-post-meta">Created at : {{ date('d M Y', strtotime($data->created_at)) }}</p>
 </article>
 
