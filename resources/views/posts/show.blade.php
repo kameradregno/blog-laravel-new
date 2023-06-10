@@ -11,7 +11,7 @@
     <p>{{$post->content}}</p>
 </article>
 
-<p class="text-muted">{{ $total_comments }} Komentar</p>
+{{-- <p class="text-muted">{{ $total_comments }} Komentar</p>
 
 @foreach ($comments->take(1) as $comment)
         <div class="card mb-3">
@@ -49,7 +49,7 @@
                     </div>
                 </div>
             @endforeach
-        </div>
+        </div> --}}
 
 <a href="{{ route('posts') }}">Back</a>
 
