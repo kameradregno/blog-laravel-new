@@ -4,6 +4,16 @@
 
 @section('content')
 
+    <div class="p-4 p-md-5 mb-4 rounded text-body-emphasis bg-body-secondary">
+        <div class="col-lg-6 px-0">
+            <h1 class="display-4 fst-italic">Selamat Datang di News-ku</h1>
+            <p class="lead my-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, laboriosam dolorum. Sequi
+                fuga fugit sit pariatur nobis similique, unde consequatur recusandae eveniet itaque asperiores. Facere nobis
+                vitae eveniet iusto praesentium?</p>
+            <p class="lead mb-0"><a href="#" class="text-body-emphasis fw-bold">Continue reading...</a></p>
+        </div>
+    </div>
+
     @foreach ($post as $p)
         <div class="card my-4 rounded-0">
             <div class="body">

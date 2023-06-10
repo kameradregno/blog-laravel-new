@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CommentsController;
+use App\Http\Controllers\LandingController;
 use App\Http\Controllers\PostsController;
 use App\Models\Posts;
 use Illuminate\Support\Facades\Route;
@@ -17,9 +18,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return route('landing');
 });
 
+// Landing
+Route::get('/landing', [LandingController::class, 'index'])->name('landing');
 
 // Posts
 
