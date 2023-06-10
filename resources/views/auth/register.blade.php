@@ -3,6 +3,9 @@
 @section('title', 'Daftar')
 
 @section('content')
+
+
+
 @if (session()->has('error_message'))
     <div class="alert alert-danger">
         {{session()->get('error_message')}}
@@ -40,6 +43,6 @@
             </form>
 
         </div>
-    </div>
-    
+    </div>   
+
 @endsection

@@ -4,6 +4,8 @@
 
 @section('content')
 
+
+
     @if (session()->has('error_message'))
         <div class="alert alert-danger">
             {{ session()->get('error_message') }}
