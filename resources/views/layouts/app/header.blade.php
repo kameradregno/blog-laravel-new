@@ -1,5 +1,5 @@
 <header
-    class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom fixed-top bg-white">
+    class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom bg-white">
 
     <div class="col-md-3 mb-2 mb-md-0">
         <div class="container">
