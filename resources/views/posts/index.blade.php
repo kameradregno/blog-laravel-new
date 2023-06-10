@@ -14,6 +14,11 @@
                             {{ date('d M Y H:i', strtotime($p->created_at)) }}
                         </small>
                     </p>
+                    <p>
+                        <small>
+                            {{ Auth::user()->username }}
+                        </small>
+                    </p>
                     <a href="{{ route('show', $p->slug) }}" class="btn btn-success">Selengkapnya</a>
                     <a href="{{ route('edit', $p->slug) }}" class="btn btn-warning">Edit</a>
                     <a href="{{ route('delete', $p->slug) }}" class="btn btn-danger">Delete</a>
