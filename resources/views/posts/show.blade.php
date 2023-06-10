@@ -13,7 +13,7 @@
 </article>
 
 {{-- <p class="text-muted">{{ $total_comments }} Komentar</p>
->>>>>>> ff8df2b77f132347067b9bc9308ca079d94a5c4b
+
 
 @foreach ($comments->take(1) as $comment)
         <div class="card mb-3">
