@@ -99,9 +99,10 @@ class PostsController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Posts $post)
+    public function destroy(Posts $post,$slug)
     {
-        $post->delete();
-        return redirect('post');
+        $data = $post->where( 'slug', $slug )->first();
+        $data->delete();
+        return redirect('posts');
     }
 }

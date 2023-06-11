@@ -16,7 +16,7 @@
 
         <div class="mb-3">
             <label class="form-label">Konten</label>
-            <textarea class="form-control" name="content" id="content" value="{{ $post->content }}" required>{{ $post->content }}</textarea>
+            <textarea class="form-control" name="content" id="content" value="{{ $post->content }}" required></textarea>
         </div>
 
         <div class="mb-3">
@@ -29,13 +29,10 @@
         </div>
 
     </form>
-
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#content'))
-            .catch(error => {
-                console.error(error);
-            });
-    </script>
+    <form action="{{ url("posts/$post->slug")}}" method="post">
+        @method('delete')
+        @csrf
+        <button type="submit" class="btn btn-danger">delete</button>
+    </form>
 
 @endsection
