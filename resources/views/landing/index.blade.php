@@ -19,7 +19,7 @@
             <div class="body">
                 <div class="card-body">
                     <h5 class="card-title">{{ $p->title }}</h5>
-                    <p class="card-text">{!! substr($p->content, 0, 50) !!}</p>
+                    <i class="card-text">{!! substr($p->content, 0, 50) !!}</i>
                     <p class="card-text">
                         <small class="muted">Created at
                             {{ date('d M Y H:i', strtotime($p->created_at)) }}
