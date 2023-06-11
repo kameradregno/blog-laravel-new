@@ -27,7 +27,11 @@
     <div class="dropdown">
         <button class="btn btn-light-outline-dark text-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
             data-bs-toggle="dropdown" aria-expanded="false">
-            {{ Auth::user()->username }}
+            @guest
+                
+            @else
+                {{ Auth::user()->username }}
+            @endguest
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             @guest
