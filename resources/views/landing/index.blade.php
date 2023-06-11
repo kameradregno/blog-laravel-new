@@ -15,7 +15,7 @@
     </div>
 
     @foreach ($post as $p)
-        <div class="card my-4 rounded-0">
+        <div class="card my-4 rounded-2 shadow-sm">
             <div class="body">
                 <div class="card-body">
                     <h5 class="card-title">{{ $p->title }}</h5>
