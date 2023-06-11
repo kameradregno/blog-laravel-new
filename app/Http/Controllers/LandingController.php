@@ -15,4 +15,14 @@ class LandingController extends Controller
         ];
         return view('landing.index', $data);
     }
+
+        /**
+     * Display the specified resource.
+     */
+    public function show(Posts $post, $slug)
+    {
+        $data = $post->where( 'slug', $slug )->first();
+        
+        return view('landing.show', compact('data'));
+    }
 }

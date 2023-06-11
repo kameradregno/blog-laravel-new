@@ -30,7 +30,7 @@
                             Created By {{ Auth::user()->username }}
                         </small>
                     </p>
-                    <a href="{{ route('show', $p->slug) }}" class="btn btn-success">Selengkapnya</a>
+                    <a href="{{ route('landingShow', $p->slug) }}" class="btn btn-success">Selengkapnya</a>
                 </div>
             </div>
         </div>

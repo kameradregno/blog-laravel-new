@@ -23,6 +23,7 @@ Route::get('/', function () {
 
 // Landing
 Route::get('/landing',                  [LandingController::class, 'index'])->name('landing');
+Route::get('/landing/{slug}',           [LandingController::class, 'show'])->name('landingShow');
 
 // Posts
 
