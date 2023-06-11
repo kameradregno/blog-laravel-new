@@ -28,9 +28,9 @@
     </ul>
 
     <div class="dropdown">
-        <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenuButton1"
+        <button class="btn btn-light-outline-dark text-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
             data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown button
+            {{ Auth::user()->username }}
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
             @guest
