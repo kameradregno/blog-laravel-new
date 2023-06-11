@@ -16,7 +16,7 @@
                     </p>
                     <p>
                         <small>
-                            {{ Auth::user()->username }}
+                            Created By {{ Auth::user()->username }}
                         </small>
                     </p>
                     <a href="{{ route('show', $p->slug) }}" class="btn btn-success">Selengkapnya</a>
