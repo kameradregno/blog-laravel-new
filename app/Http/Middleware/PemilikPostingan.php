@@ -17,12 +17,12 @@ class PemilikPostingan
      */
     public function handle(Request $request, Closure $next): Response
     {
-        $posts = Posts::findOrFail($request->id);
+        $posts = Posts::first();
         $user = Auth::user();
 
-        if($posts->user_id != $user->id){
-            return redirect('landing');
+        if($posts->user_id == $user->id){
+            return $next($request);
         }
-        return $next($request);
+        return redirect('landing');
     }
 }
