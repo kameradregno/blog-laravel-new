@@ -28,7 +28,7 @@
         <button class="btn btn-light-outline-dark text-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
             data-bs-toggle="dropdown" aria-expanded="false">
             @guest
-                
+                Menu
             @else
                 {{ Auth::user()->username }}
             @endguest
