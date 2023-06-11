@@ -37,11 +37,11 @@
                 <li><a href="{{ route('register') }}" class="dropdown-item">Sign-up</a></li>
             @else
                 <li><a href="{{ route('create') }}" class="dropdown-item">Buat Blog</a></li>
+                <li><a href="{{ route('posts') }}" class="dropdown-item">Your Own Post</a></li>
                 <li><form action="{{ route('logout') }}" method="POST" class="dropdown-item">
                     @csrf
                     Logout
                 </form></li>
-                <li><a href="{{ route('posts') }}" class="dropdown-item">Your Own Post</a></li>
                 @endguest
 
         </ul>
