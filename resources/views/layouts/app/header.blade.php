@@ -20,7 +20,7 @@
         <li><a href="#" class="nav-link px-2">Features</a></li>
         <li><a href="#" class="nav-link px-2">Pricing</a></li>
         <li><a href="#" class="nav-link px-2">FAQs</a></li>
-        <li><a href="#" class="nav-link px-2">About</a></li> 
+        <li><a href="#" class="nav-link px-2">About</a></li>
         @else
         <li><span class="text-dark px-2"><b>Selamat datang,</b> <i>{{ Auth::user()->username }}</i></span></li>      
         @endguest
