@@ -23,7 +23,7 @@ Route::get('/{slug}',                   [LandingController::class, 'show'])->nam
 
 // Posts
 
-Route::get      ('posts',               [PostsController::class, 'index'])->name('posts');
+Route::get      ('posts',               [PostsController::class, 'index'])->name('index');
 Route::get      ('posts/create',        [PostsController::class, 'create'])->name('create');
 Route::get      ('posts/{slug}',        [PostsController::class, 'show'])->name('show');
 Route::post     ('posts',               [PostsController::class, 'store'])->name('store');

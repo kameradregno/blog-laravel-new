@@ -45,7 +45,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{ route('posts') }}" class="dropdown-item">
+                    <a href="{{ route('index') }}" class="dropdown-item">
                         <svg width="18" height="18"
                             class="mb-1 me-2" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path fill-rule="evenodd" clip-rule="evenodd"
@@ -57,6 +57,7 @@
                 </li>
                 <li>
                     <form action="{{ route('logout') }}" method="GET" class="dropdown-item">
+                        @csrf
                         <svg fill="#000000"
                             width="18" height="18" class="mb-1 me-2" viewBox="0 0 32 32" version="1.1"
                             xmlns="http://www.w3.org/2000/svg">
