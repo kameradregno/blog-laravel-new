@@ -11,12 +11,12 @@
         @csrf
         <div class="mb-3">
             <label class="form-label">Judul</label>
-            <input type="text" class="form-control" id="title" name="title" value="{{ $post->title }}" required>
+            <input type="text" class="form-control" id="title" name="title" value="{{ $post->title }}">
         </div>
 
         <div class="mb-3">
             <label class="form-label">Konten</label>
-            <textarea class="form-control" name="content" id="content" value="{{ $post->content }}" required></textarea>
+            <textarea class="form-control" name="content" id="content" value="{{ $post->content }}">{{ $post->content }}</textarea>
         </div>
 
         <div class="mb-3">
