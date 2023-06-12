@@ -72,18 +72,16 @@ class PostsController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, $slug)
+    public function update(PostsRequest $request, $slug)
     {
-        $post = Posts::selectBySlug($slug)->first();
-        $new_slug = $this->makeSlug($request['title']);
+        $post = Posts::where('slug', $slug)->first();
 
         if (empty($request->image)) {
             $post->update([
-                'title' => $request['title'],
-                'content' => $request['content'],
-                'slug' => $new_slug,
+                $request->all(),
+                $request['slug'] = Str::slug('title')
             ]);
-            return redirect("posts/$new_slug");
+            return redirect("posts");
         } else {
             Storage::delete($post->image);
             $post->update([
