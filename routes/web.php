@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 // Landing
 Route::get('/',                         [LandingController::class, 'index'])->name('landing');
-Route::get('/{slug}',                   [LandingController::class, 'show'])->name('landingShow');
+Route::get('landing/{slug}',                   [LandingController::class, 'show'])->name('landingShow');
 
 // Posts
 
