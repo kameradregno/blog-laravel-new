@@ -74,7 +74,7 @@ class PostsController extends Controller
      */
     public function update(PostsRequest $request, $slug)
     {
-        $post = Post::where('slug', $slug)->first();
+        $post = Posts::where('slug', $slug)->first();
         $new_slug = ($request['title']);
 
         if (empty($request->image)) {
