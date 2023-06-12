@@ -13,7 +13,7 @@ class PostsController extends Controller
 {
     public function __construct(){
         $this->middleware('auth');
-        $this->middleware('pemilik-postingan');
+        // $this->middleware('pemilik-postingan');
     }
     /**
      * Display a listing of the resource.
