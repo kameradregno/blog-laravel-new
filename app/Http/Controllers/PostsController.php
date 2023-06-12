@@ -74,14 +74,16 @@ class PostsController extends Controller
      */
     public function update(PostsRequest $request, $slug)
     {
-        $post = Posts::where('slug', $slug)->first();
+        $post = Post::where('slug', $slug)->first();
+        $new_slug = ($request['title']);
 
         if (empty($request->image)) {
             $post->update([
-                $request->all(),
-                $request['slug'] = Str::slug('title')
+                'title' => $request['title'],
+                'content' => $request['content'],
+                'slug' => $new_slug,
             ]);
-            return redirect("posts");
+            return redirect("posts/$new_slug");
         } else {
             Storage::delete($post->image);
             $post->update([
@@ -92,6 +94,7 @@ class PostsController extends Controller
             ]);
             return redirect("posts/$new_slug");
         }
+        
 
     }
 
