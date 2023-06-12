@@ -29,9 +29,9 @@
             @else
                 <li>
                     <a href="{{ route('create') }}" class="dropdown-item">
-                        <svg version="1.1" id="Uploaded to svgrepo.com"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18"
-                            height="18" class="mb-1 me-2" viewBox="0 0 32 32" xml:space="preserve">
+                        <svg version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" class="mb-1 me-2"
+                            viewBox="0 0 32 32" xml:space="preserve">
                             <style type="text/css">
                                 .blueprint_een {
                                     fill: #111918;

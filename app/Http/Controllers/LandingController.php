@@ -19,9 +19,9 @@ class LandingController extends Controller
         /**
      * Display the specified resource.
      */
-    public function show(Posts $post, $slug)
+    public function show($slug)
     {
-        $data = $post->where( 'slug', $slug )->first();
+        $data = Posts::where( 'slug', $slug )->first();
         
         return view('landing.show', compact('data'));
     }
