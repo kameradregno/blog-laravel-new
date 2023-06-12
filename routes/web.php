@@ -17,13 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return route('landing');
-});
-
 // Landing
-Route::get('/landing',                  [LandingController::class, 'index'])->name('landing');
-Route::get('/landing/{slug}',           [LandingController::class, 'show'])->name('landingShow');
+Route::get('/',                         [LandingController::class, 'index'])->name('landing');
+Route::get('/{slug}',                   [LandingController::class, 'show'])->name('landingShow');
 
 // Posts
 
