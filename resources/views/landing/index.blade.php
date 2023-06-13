@@ -27,7 +27,11 @@
                     </p>
                     <p>
                         <small>
+                            @guest
+                                
+                            @else
                             Created By {{ Auth::user()->username }}
+                            @endguest
                         </small>
                     </p>
                     <a href="{{ route('landingShow', $p->slug) }}" class="btn btn-success">Selengkapnya</a>
