@@ -64,9 +64,15 @@ class PostsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Posts $post)
+    public function edit($slug)
     {
-        return view('posts.edit',compact('post'));
+        $selected_post = Posts::where('slug', $slug)->first();
+
+        $data = [
+            $post = $selected_post
+        ];
+
+        return view('posts.edit', compact('data', 'post'));
     }
 
     /**
