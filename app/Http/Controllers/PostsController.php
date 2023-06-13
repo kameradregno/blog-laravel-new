@@ -57,8 +57,9 @@ class PostsController extends Controller
     public function show($slug)
     {
         $data = Posts::where( 'slug', $slug )->first();
+        $comments = $data->comments()->get();
         
-        return view('posts.show', compact('data'));
+        return view('posts.show', compact('data','comments'));
     }
 
     /**

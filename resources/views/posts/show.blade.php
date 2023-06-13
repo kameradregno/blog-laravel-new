@@ -10,13 +10,10 @@
         <p class="blog-post-meta">Created at : {{ date('d M Y', strtotime($data->created_at)) }}</p>
     </article>
 
-    {{-- <p class="text-muted">{{ $total_comments }} Komentar</p>
-
-
-@foreach ($comments->take(1) as $comment)
+    @foreach ($comments as $comment)
         <div class="card mb-3">
             <div class="card-header text-primary">
-                &#64;{{ $comment->commentwriter->name }}
+                &#64;{{ $comment->commentwriter->username }}
             </div>
             <div class="card-body">
                 <blockquote class="blockquote mb-0">
@@ -26,7 +23,7 @@
                 </blockquote>
             </div>
         </div>
-    @endforeach --}}
+    @endforeach
 
     {{-- @if ($comments->count() > 1)
 

@@ -25,4 +25,9 @@ class Comments extends Model
     {
         return $this->hasOne(User::class, 'id', 'user_id');
     }
+
+    public function commentwriter()
+    {
+        return $this->belongsTo(User::class, 'user_id', 'id');
+    }
 }
