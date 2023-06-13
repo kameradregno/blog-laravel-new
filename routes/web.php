@@ -34,4 +34,4 @@ Route::delete   ('posts/{slug}',        [PostsController::class, 'destroy'])->na
 
 // Comment
 
-Route::post('comments',                 [CommentsController::class, 'comments'])->name('comment'); 
+Route::post('comments',                 [CommentsController::class, 'create'])->name('comment'); 

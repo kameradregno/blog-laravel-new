@@ -22,7 +22,7 @@ class CommentsController extends Controller
      */
     public function create(CommentCreateRequest $request)
     {
-       $comment = comments::create([
+        $comment = comments::create([
             'comment' => $request->comment,
             'user_id' => Auth::user()->id,
             'post_id' => $request->post_id,

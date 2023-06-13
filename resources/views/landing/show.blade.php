@@ -50,7 +50,7 @@
                 </div>
             @endforeach
         </div>  --}}     
-    <a href="{{ route('landing') }}" class="btn btn-success">Back</a>
+    <a href="{{ route('landing') }}" class="btn btn-success my-2">Back</a>
 
 
 @endsection
