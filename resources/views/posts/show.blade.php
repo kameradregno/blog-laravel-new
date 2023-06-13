@@ -4,13 +4,13 @@
 
 @section('content')
 
-<article class="blog-post mt-5">
-    <h2 class="blog-post-title mb-4">{{$data->title}}</h2>
-    <p class="fs-5">{{ $data->content }}</p>
-    <p class="blog-post-meta">Created at : {{ date('d M Y', strtotime($data->created_at)) }}</p>
-</article>
+    <article class="blog-post mt-5">
+        <h2 class="blog-post-title mb-4">{{ $data->title }}</h2>
+        <p class="fs-5">{{ $data->content }}</p>
+        <p class="blog-post-meta">Created at : {{ date('d M Y', strtotime($data->created_at)) }}</p>
+    </article>
 
-{{-- <p class="text-muted">{{ $total_comments }} Komentar</p>
+    {{-- <p class="text-muted">{{ $total_comments }} Komentar</p>
 
 
 @foreach ($comments->take(1) as $comment)
@@ -49,8 +49,20 @@
                     </div>
                 </div>
             @endforeach
-        </div>  --}}     
-    <a href="{{ route('index') }}" class="btn btn-success">Back</a>
+        </div>  --}}
+
+    <form action="" class="d-flex my-5">
+        @csrf
+        <div class="input-group">
+            <input type="text" class="form-control" name="comment" placeholder="Buat Komentar">
+            <input type="hidden" name="post_id" value="{{ $data->id }}">
+            <button type="submit" class="btn btn-outline-secondary">Kirim</button>
+        </div>
+    </form>
+
+
+
+    <a href="{{ route('index') }}" class="btn btn-success mb-3">Back</a>
 
 
 @endsection
