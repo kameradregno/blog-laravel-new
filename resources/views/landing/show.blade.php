@@ -49,7 +49,17 @@
                     </div>
                 </div>
             @endforeach
-        </div>  --}}     
+        </div>  --}}  
+        
+        <form action="" class="d-flex my-5">
+            @csrf
+            <div class="input-group">
+                <input type="text" class="form-control" name="comment" placeholder="Buat Komentar">
+                <input type="hidden" name="post_id" value="{{ $data->id }}">
+                <button type="submit" class="btn btn-outline-secondary">Kirim</button>
+            </div>
+        </form>
+        
     <a href="{{ route('landing') }}" class="btn btn-success my-2">Back</a>
 
 
