@@ -23,15 +23,13 @@ Route::get('landing/{slug}', [LandingController::class, 'show'])->name('landingS
 
 
 // Posts
-
-Route::get      ('posts',               [PostsController::class, 'index'])->name('index');
-Route::get      ('posts/create',        [PostsController::class, 'create'])->name('create');
-Route::get      ('posts/{slug}',        [PostsController::class, 'show'])->name('show');
-Route::post     ('posts',               [PostsController::class, 'store'])->name('store');
-Route::get      ('posts/{slug}/edit',   [PostsController::class, 'edit'])->name('edit');
-Route::patch    ('posts/{slug}',        [PostsController::class, 'update'])->name('update');
-Route::delete   ('posts/{slug}',        [PostsController::class, 'destroy'])->name('delete');
+Route::get('posts', [PostsController::class, 'index'])->name('index');
+Route::get('posts/create', [PostsController::class, 'create'])->name('create');
+Route::get('posts/{slug}', [PostsController::class, 'show'])->name('show');
+Route::post('posts', [PostsController::class, 'store'])->name('store');
+Route::get('posts/{slug}/edit', [PostsController::class, 'edit'])->name('edit');
+Route::patch('posts/{slug}', [PostsController::class, 'update'])->name('update');
+Route::delete('posts/{slug}', [PostsController::class, 'destroy'])->name('delete');
 
 // Comment
-
-Route::post('comments',                 [CommentsController::class, 'create'])->name('comment'); 
+Route::post('comments', [CommentsController::class, 'create'])->name('comment'); 
