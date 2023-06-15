@@ -4,6 +4,10 @@
 
 @section('content')
 
+    <div>
+        <a href="{{ route('create') }}" class="btn btn-success">Create</a>
+    </div>
+
     @foreach ($post as $p)
         <div class="card my-4 rounded-2 shadow-sm">
             <div class="body">

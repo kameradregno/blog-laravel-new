@@ -27,7 +27,7 @@
                 <li><a href="{{ route('login') }}" class="me-2 dropdown-item">Login</a></li>
                 <li><a href="{{ route('register') }}" class="dropdown-item">Sign-up</a></li>
             @else
-                <li>
+                {{-- <li>
                     <a href="{{ route('create') }}" class="dropdown-item">
                         <svg version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg"
                             xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" class="mb-1 me-2"
@@ -43,7 +43,7 @@
                         </svg>
                         Buat Blog
                     </a>
-                </li>
+                </li> --}}
                 <li>
                     <a href="{{ route('index') }}" class="dropdown-item">
                         <svg width="18" height="18"
