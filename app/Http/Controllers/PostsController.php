@@ -57,8 +57,9 @@ class PostsController extends Controller
     {
         $data = Posts::where( 'slug', $slug )->first();
         $comments = $data->comments()->get();
+        $total_comments = $comments->count();
         
-        return view('posts.show', compact('data','comments'));
+        return view('posts.show', compact('data','comments', 'total_comments'));
     }
 
     /**
