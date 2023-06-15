@@ -6,13 +6,8 @@
 
     <article class="blog-post mt-5">
         <h2 class="blog-post-title mb-4">{{ $data->title }}</h2>
-<<<<<<< HEAD
-        <img src="{{ url('storage/'.$data->image)}}" alt="photo" class="card-img-top object-fit-cover" width="100%" height="350">
-        <p class="fs-5">{!! $data->content !!}</p> 
-=======
         <img src="{{ url('storage/' . $data->image) }}" alt="">
         <p class="fs-5">{!! $data->content !!}</p>
->>>>>>> ef8e3b959dcae93621f284a9f09983c059f03606
         <p class="blog-post-meta">Created at : {{ date('d M Y', strtotime($data->created_at)) }}</p>
     </article>
 
