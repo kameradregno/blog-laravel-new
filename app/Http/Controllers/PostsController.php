@@ -82,7 +82,7 @@ class PostsController extends Controller
     public function update(PostsRequest $request, $slug)
     {
         $post = Posts::where('slug', $slug)->first();
-        $new_slug = ($request['title']);
+        $new_slug = Str::slug($request['title']);
 
         if (empty($request->image)) {
             $post->update([
