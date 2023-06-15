@@ -16,7 +16,7 @@
 
         <div class="mb-3">
             <label class="form-label">Konten</label>
-            <textarea type="text" class="form-control" name="content" id="content"></textarea>
+            <textarea type="text" class="form-control" name="content" id="editor"></textarea>
         </div>
 
         <div class="mb-3">
@@ -29,15 +29,6 @@
         </div>
 
     </form>
-
-    
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#content'))
-            .catch(error => {
-                console.error(error);
-            });
-    </script>
 
 @endsection
 

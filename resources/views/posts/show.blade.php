@@ -25,7 +25,7 @@
         </div>
     @endforeach
 
-    {{-- @if ($comments->count() > 1)
+    @if ($comments->count() > 1)
 
         <div class="position-relative">
             <a class="position-absolute top-50 start-50 translate-middle" id="showAllComments">Show All Comments</a>
@@ -46,7 +46,7 @@
                     </div>
                 </div>
             @endforeach
-        </div>  --}}
+        </div> 
 
     <form action="" class="d-flex my-5">
         @csrf
@@ -56,10 +56,7 @@
             <button type="submit" class="btn btn-outline-secondary">Kirim</button>
         </div>
     </form>
-
-
+    @endif
 
     <a href="{{ route('index') }}" class="btn btn-success mb-3">Back</a>
-
-
 @endsection

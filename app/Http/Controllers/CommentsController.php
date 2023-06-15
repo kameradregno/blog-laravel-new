@@ -14,7 +14,13 @@ class CommentsController extends Controller
      */
     public function index()
     {
-        //
+        $comments = Comments::get();
+
+        $data = [
+            'comments' => $comments
+        ];
+
+        return view('posts.show', $data);
     }
 
     /**
