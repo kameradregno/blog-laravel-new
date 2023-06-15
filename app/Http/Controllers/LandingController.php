@@ -22,6 +22,8 @@ class LandingController extends Controller
     public function show($slug)
     {
         $data = Posts::where( 'slug', $slug )->first();
+        $comments = $data->comments()->get();
+        $total_comments = $comments->count();
         
         return view('landing.show', compact('data'));
     }
