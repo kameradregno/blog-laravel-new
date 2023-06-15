@@ -25,6 +25,6 @@ class LandingController extends Controller
         $comments = $data->comments()->get();
         $total_comments = $comments->count();
         
-        return view('landing.show', compact('data'));
+        return view('landing.show', compact('data', 'comments', 'total_comments'));
     }
 }
