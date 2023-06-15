@@ -12,7 +12,7 @@ class Comments extends Model
     use HasFactory;
 
     protected $fillable = [
-        'user_id', 'post_id', 'content'
+        'user_id', 'post_id', 'comment'
     ];
 
     

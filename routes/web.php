@@ -32,4 +32,4 @@ Route::patch('posts/{slug}', [PostsController::class, 'update'])->name('update')
 Route::delete('posts/{slug}', [PostsController::class, 'destroy'])->name('delete');
 
 // Comment
-Route::post('comments', [CommentsController::class, 'create'])->name('comment'); 
+Route::post('comments', [CommentsController::class, 'comments'])->name('comment'); 

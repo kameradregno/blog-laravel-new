@@ -50,7 +50,7 @@
         </div> 
         @endif
 
-    <form action="" class="d-flex my-5">
+    <form action="{{ url('comments')}}" class="d-flex my-5" method="POST">
         @csrf
         <div class="input-group">
             <input type="text" class="form-control" name="comment" placeholder="Buat Komentar">
