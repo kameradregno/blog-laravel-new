@@ -4,16 +4,16 @@
 
 @section('content')
 
-<article class="blog-post mt-5">
-    <h2 class="blog-post-title mb-4">{{$data->title}}</h2>
-    <p class="fs-5">{!! $data->content !!}</p>
-    <p class="blog-post-meta">Created at : {{ date('d M Y', strtotime($data->created_at)) }}</p>
-</article>
+    <article class="blog-post mt-5">
+        <h2 class="blog-post-title mb-4">{{ $data->title }}</h2>
+        <p class="fs-5">{!! $data->content !!}</p>
+        <p class="blog-post-meta">Created at : {{ date('d M Y', strtotime($data->created_at)) }}</p>
+    </article>
 
-<p class="text-muted">{{ $total_comments }} Komentar</p>
+    <p class="text-muted">{{ $total_comments }} Komentar</p>
 
 
-@foreach ($comments->take(1) as $comment)
+    @foreach ($comments->take(1) as $comment)
         <div class="card mb-3">
             <div class="card-header text-primary">
                 &#64;{{ $comment->commentwriter->name }}
@@ -38,7 +38,7 @@
             @foreach ($comments->skip(1) as $comment)
                 <div class="card mb-3">
                     <div class="card-header text-primary">
-                        &#64;{{ $comment->commentwriter->name }}
+                        &#64;{{ $comment->commentwriter->username }}
                     </div>
                     <div class="card-body">
                         <blockquote class="blockquote mb-0">
@@ -50,17 +50,24 @@
                 </div>
             @endforeach
         </div>
-        @endif   
-        
-        <form action="{{ route('comment')}}" class="d-flex my-5" method="POST">
-            @csrf
-            <div class="input-group">
-                <input type="text" class="form-control" name="comment" placeholder="Buat Komentar">
-                <input type="hidden" name="post_id" value="{{ $data->id }}">
-                <button type="submit" class="btn btn-outline-secondary">Kirim</button>
-            </div>
-        </form>
-        
+
+        <script>
+            document.getElementById("showAllComments").addEventListener("click", function() {
+                document.getElementById("hiddenComments").style.display = "block";
+                this.style.display = "none";
+            });
+        </script>
+    @endif
+
+    <form action="{{ route('comment') }}" class="d-flex my-5" method="POST">
+        @csrf
+        <div class="input-group">
+            <input type="text" class="form-control" name="comment" placeholder="Buat Komentar">
+            <input type="hidden" name="post_id" value="{{ $data->id }}">
+            <button type="submit" class="btn btn-outline-secondary">Kirim</button>
+        </div>
+    </form>
+
     <a href="{{ route('landing') }}" class="btn btn-success my-2">Back</a>
 
 

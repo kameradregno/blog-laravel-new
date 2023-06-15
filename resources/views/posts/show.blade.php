@@ -6,8 +6,8 @@
 
     <article class="blog-post mt-5">
         <h2 class="blog-post-title mb-4">{{ $data->title }}</h2>
-        <img src="{{ url('storage/'.$data->image)}}" alt="">
-        <p class="fs-5">{!! $data->content !!}</p> 
+        <img src="{{ url('storage/' . $data->image) }}" alt="">
+        <p class="fs-5">{!! $data->content !!}</p>
         <p class="blog-post-meta">Created at : {{ date('d M Y', strtotime($data->created_at)) }}</p>
     </article>
 
@@ -47,10 +47,18 @@
                     </div>
                 </div>
             @endforeach
-        </div> 
-        @endif
+        </div>
 
-    <form action="{{ url('comments')}}" class="d-flex my-5" method="POST">
+        <script>
+            document.getElementById("showAllComments").addEventListener("click", function() {
+                document.getElementById("hiddenComments").style.display = "block";
+                this.style.display = "none";
+            });
+        </script>
+
+    @endif
+
+    <form action="{{ url('comments') }}" class="d-flex my-5" method="POST">
         @csrf
         <div class="input-group">
             <input type="text" class="form-control" name="comment" placeholder="Buat Komentar">
@@ -58,7 +66,7 @@
             <button type="submit" class="btn btn-outline-secondary">Kirim</button>
         </div>
     </form>
-    
+
 
     <a href="{{ route('index') }}" class="btn btn-success mb-3">Back</a>
 @endsection
