@@ -49,7 +49,8 @@
                     </div>
                 </div>
             @endforeach
-        </div>  --}}  
+        </div>
+        @endif  --}}  
         
         <form action="" class="d-flex my-5">
             @csrf
