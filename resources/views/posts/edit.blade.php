@@ -35,12 +35,4 @@
         <button type="submit" class="btn btn-danger">Delete</button>
     </form>
 
-    <script>
-        ClassicEditor
-            .create(document.querySelector('#content'))
-            .catch(error => {
-                console.error(error);
-            });
-    </script>
-
 @endsection
