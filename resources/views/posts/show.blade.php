@@ -47,6 +47,7 @@
                 </div>
             @endforeach
         </div> 
+        @endif
 
     <form action="" class="d-flex my-5">
         @csrf
@@ -56,7 +57,7 @@
             <button type="submit" class="btn btn-outline-secondary">Kirim</button>
         </div>
     </form>
-    @endif
+    
 
     <a href="{{ route('index') }}" class="btn btn-success mb-3">Back</a>
 @endsection
