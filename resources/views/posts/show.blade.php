@@ -11,6 +11,15 @@
         <p class="blog-post-meta">Created at : {{ date('d M Y', strtotime($data->created_at)) }}</p>
     </article>
 
+    <form action="{{ route('comment') }}" class="d-flex my-5" method="POST">
+        @csrf
+        <div class="input-group">
+            <input type="text" class="form-control" name="comment" placeholder="Buat Komentar">
+            <input type="hidden" name="post_id" value="{{ $data->id }}">
+            <button type="submit" class="btn btn-outline-secondary">Kirim</button>
+        </div>
+    </form>
+
     <div class="card mb-3">
         <div class="card-header">
             {{ $total_comments }} Komentar
@@ -59,18 +68,6 @@
     </script>
 
     @endif
-
-
-
-    <form action="{{ url('comments') }}" class="d-flex my-5" method="POST">
-        @csrf
-        <div class="input-group">
-            <input type="text" class="form-control" name="comment" placeholder="Buat Komentar">
-            <input type="hidden" name="post_id" value="{{ $data->id }}">
-            <button type="submit" class="btn btn-outline-secondary">Kirim</button>
-        </div>
-    </form>
-
 
     <a href="{{ route('index') }}" class="btn btn-success mb-3">Back</a>
 @endsection
