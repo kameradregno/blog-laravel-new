@@ -32,7 +32,7 @@
     <form action="{{ url("posts/$post->slug")}}" method="post">
         @method('delete')
         @csrf
-        <button type="submit" class="btn btn-danger">Delete</button>
+        <button type="submit" class="btn btn-danger mb-4">Delete</button>
     </form>
 
 @endsection
