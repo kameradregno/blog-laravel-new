@@ -19,7 +19,8 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = Posts::get();
+        $user = Auth::user();
+        $posts = Posts::where('user_id', $user)->get();
 
         $data = [
             'post' => $posts
