@@ -12,8 +12,6 @@ class LandingController extends Controller
 
         $data = [
             'post' => $posts
-            // 'user' => $name
-
         ];
         return view('landing.index', $data);
     }
