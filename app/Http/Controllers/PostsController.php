@@ -42,6 +42,7 @@ class PostsController extends Controller
     public function store(PostsRequest $request)
     {
         $data = $request->all();
+        $data['image'] = $request->file('image')->store('image');
         $data['user_id'] = Auth::user()->id;
         $data['slug'] = Str::slug($request->title);
 
