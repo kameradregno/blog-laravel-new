@@ -14,8 +14,10 @@
                 Created at : {{ date('d M Y', strtotime($data->created_at)) }}
             </small>
         </p>
-        <img src="{{ url('storage/' . $data->image) }}" alt="photo" class="card-img-top object-fit-cover" width="100%"
-            height="350">
+        @if ($data->image)
+            <img src="{{ url('storage/' . $data->image) }}" alt="photo" class="card-img-top object-fit-cover" width="100%"
+                height="350">
+        @endif
         <p class="fs-5">{!! $data->content !!}</p>
     </article>
 
@@ -62,21 +64,21 @@
 
             <div id="hiddenComments" style="display: none;">
                 @foreach ($comments->skip(1) as $comment)
-                <div class="my-4">
-                    <h6 class="fw-bold mb-1">&#64;{{ $comment->commentwriter->username }}</h6>
-                    <blockquote class="blockquote mb-0">
-                        <p>
-                            <small>
-                                {{ $comment->comment }}
-                            </small>
-                        </p>
-                        <p class="blockquote-footer mt-2">
-                            <small>
-                                Commented at {{ date('d M Y H:i', strtotime($comment->created_at)) }}
-                            </small>
-                        </p>
-                    </blockquote>
-                </div>
+                    <div class="my-4">
+                        <h6 class="fw-bold mb-1">&#64;{{ $comment->commentwriter->username }}</h6>
+                        <blockquote class="blockquote mb-0">
+                            <p>
+                                <small>
+                                    {{ $comment->comment }}
+                                </small>
+                            </p>
+                            <p class="blockquote-footer mt-2">
+                                <small>
+                                    Commented at {{ date('d M Y H:i', strtotime($comment->created_at)) }}
+                                </small>
+                            </p>
+                        </blockquote>
+                    </div>
                 @endforeach
             </div>
     </div>
