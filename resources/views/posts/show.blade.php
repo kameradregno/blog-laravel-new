@@ -43,7 +43,7 @@
                     </p>
                     <p class="blockquote-footer mt-2">
                         <small>
-                            Commented at {{ date('d M Y H:i', strtotime($comment->created_at)) }}
+                            {{ date('d M Y H:i', strtotime($comment->created_at)) }}
                         </small>
                     </p>
                 </blockquote>

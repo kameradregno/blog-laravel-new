@@ -14,7 +14,7 @@
                 <i class="card-text">{!! substr($p->content, 0, 50) !!}</i>
                 <p class="card-text">
                     <small class="muted">Created at
-                        {{ date('d M Y H:i', strtotime($p->created_at)) }}
+                        {{ date('d M Y, H:i', strtotime($p->created_at)) }}
                     </small>
                 </p>
                 <p>
