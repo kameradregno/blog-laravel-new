@@ -19,7 +19,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $user = Auth::user();
+        $user = Auth::user()->id;
         $posts = Posts::where('user_id', $user)->get();
 
         $data = [
