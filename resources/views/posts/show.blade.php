@@ -11,8 +11,7 @@
                 Oleh : {{ Auth::user()->username }}
             </small>
         </p>
-        <img src="{{ url('storage/' . $data->image) }}" alt="photo" class="card-img-top object-fit-cover" width="100%"
-            height="350">
+        <img src="{{ url('storage/' . $data->image) }}" alt="photo" class="card-img-top object-fit-cover h-auto rounded-2" width="100%">
         <p class="fs-5">{!! $data->content !!}</p>
         <p class="blog-post-meta">Created at : {{ date('d M Y', strtotime($data->created_at)) }}</p>
     </article>

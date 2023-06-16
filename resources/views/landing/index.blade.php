@@ -8,7 +8,7 @@
         <div class="carousel-inner">
             @foreach ($post as $p)
                 <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
-                    <img src="{{ asset('storage/' . $p->image) }}" class="d-block w-100" alt="Slide Image">
+                    <img src="{{ asset('storage/' . $p->image) }}" class="d-block w-100 h-auto rounded-2" alt="Slide Image">
                 </div>
             @endforeach
         </div>
