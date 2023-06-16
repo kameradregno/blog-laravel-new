@@ -27,11 +27,7 @@
                     </p>
                     <p>
                         <small>
-                            @guest
-                                
-                            @else
                             Created By {{ $p->user->username }}
-                            @endguest
                         </small>
                     </p>
                     <a href="{{ route('landingShow', $p->slug) }}" class="btn btn-success">Selengkapnya</a>
