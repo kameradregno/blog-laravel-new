@@ -13,7 +13,7 @@ class Posts extends Model
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
-        'id', 'user_id', 'title', 'slug', 'content', 'image'
+        'id', 'user_id', 'title', 'slug', 'content', 'image',
     ];
 
     /**

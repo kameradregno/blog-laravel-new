@@ -30,7 +30,7 @@
                             @guest
                                 
                             @else
-                            Created By {{ Auth::user()->username }}
+                            Created By {{ $p->user->username }}
                             @endguest
                         </small>
                     </p>
