@@ -10,53 +10,52 @@
         <p class="blog-post-meta">Created at : {{ date('d M Y', strtotime($data->created_at)) }}</p>
     </article>
 
-    <p class="text-muted">{{ $total_comments }} Komentar</p>
-
-
-    @foreach ($comments->take(1) as $comment)
-        <div class="card mb-3">
-            <div class="card-header text-primary">
-                &#64;{{ $comment->commentwriter->name }}
-            </div>
-            <div class="card-body">
-                <blockquote class="blockquote mb-0">
-                    <p>{{ $comment->comment }}</p>
-                    <p class="blockquote-footer"><small>Commented At :
-                            {{ date('d M Y H:i', strtotime($comment->created_at)) }}</small></p>
-                </blockquote>
-            </div>
+    <div class="card mb-3">
+        <div class="card-header">
+            {{ $total_comments }} Komentar
         </div>
-    @endforeach
-
-    @if ($comments->count() > 1)
-
-        <div class="position-relative">
-            <a class="position-absolute top-50 start-50 translate-middle" id="showAllComments">Show All Comments</a>
-        </div>
-
-        <div id="hiddenComments" style="display: none;">
-            @foreach ($comments->skip(1) as $comment)
-                <div class="card mb-3">
-                    <div class="card-header text-primary">
-                        &#64;{{ $comment->commentwriter->username }}
-                    </div>
-                    <div class="card-body">
+        <div class="card-body">
+            <div class="container">
+                @foreach ($comments->take(1) as $comment)
+                    <div class="my-1">
+                        <p class="text-muted mb-1">&#64;{{ $comment->commentwriter->username }}</p>
                         <blockquote class="blockquote mb-0">
                             <p>{{ $comment->comment }}</p>
                             <p class="blockquote-footer"><small>Commented At :
                                     {{ date('d M Y H:i', strtotime($comment->created_at)) }}</small></p>
                         </blockquote>
                     </div>
-                </div>
+                @endforeach
+
+                @if ($comments->count() > 1)
+
+                    <div class="position-relative my-4">
+                        <a class="position-absolute top-50 start-50 translate-middle" id="showAllComments">Show All
+                            Comments</a>
+                    </div>
+
+                    <div id="hiddenComments" style="display: none;">
+                        @foreach ($comments->skip(1) as $comment)
+                            <div class="my-4">
+                                <p class="text-muted mb-1">&#64;{{ $comment->commentwriter->username }}</p>
+                                <blockquote class="blockquote mb-0">
+                                    <p>{{ $comment->comment }}</p>
+                                    <p class="blockquote-footer"><small>Commented At :
+                                            {{ date('d M Y H:i', strtotime($comment->created_at)) }}</small></p>
+                                </blockquote>
+                            </div>
+                    </div>
+            </div>
             @endforeach
         </div>
+    </div>
 
-        <script>
-            document.getElementById("showAllComments").addEventListener("click", function() {
-                document.getElementById("hiddenComments").style.display = "block";
-                this.style.display = "none";
-            });
-        </script>
+    <script>
+        document.getElementById("showAllComments").addEventListener("click", function() {
+            document.getElementById("hiddenComments").style.display = "block";
+            this.style.display = "none";
+        });
+    </script>
     @endif
 
     <form action="{{ route('comment') }}" class="d-flex my-5" method="POST">
