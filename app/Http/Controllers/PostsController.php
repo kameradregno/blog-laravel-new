@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Posts;
 use Illuminate\Support\Str;
-use Illuminate\Http\Request;
 use App\Http\Requests\PostsRequest;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;

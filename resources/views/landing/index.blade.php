@@ -44,7 +44,7 @@
                     </small>
                 </p>
 
-                <a href="{{ url("posts/$p->slug") }}" class="btn btn-success">Selengkapnya</a>
+                <a href="{{ url("landing/$p->slug") }}" class="btn btn-success">Selengkapnya</a>
                 
             </div>
         </div>
