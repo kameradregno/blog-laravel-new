@@ -27,23 +27,6 @@
                 <li><a href="{{ route('login') }}" class="me-2 dropdown-item">Login</a></li>
                 <li><a href="{{ route('register') }}" class="dropdown-item">Sign-up</a></li>
             @else
-                {{-- <li>
-                    <a href="{{ route('create') }}" class="dropdown-item">
-                        <svg version="1.1" id="Uploaded to svgrepo.com" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" class="mb-1 me-2"
-                            viewBox="0 0 32 32" xml:space="preserve">
-                            <style type="text/css">
-                                .blueprint_een {
-                                    fill: #111918;
-                                }
-                            </style>
-                            <path class="blueprint_een"
-                                d="M12,0L4,8v24h24V0H12z M12,8H6.828l5.176-5.176L12,8z M26,30H6V9h7V2h13V30z M10,16v4h4v4h4v-4
-                    h4v-4h-4v-4h-4v4H10z M15,17v-4h2v4h4v2h-4v4h-2v-4h-4v-2H15z" />
-                        </svg>
-                        Buat Blog
-                    </a>
-                </li> --}}
                 <li>
                     <a href="{{ route('index') }}" class="dropdown-item">
                         <svg width="18" height="18"
