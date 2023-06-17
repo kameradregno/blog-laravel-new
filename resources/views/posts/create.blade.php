@@ -11,7 +11,7 @@
         @csrf
         <div class="mb-3">
             <label class="form-label">Judul</label>
-            <input type="text" class="form-control" id="title" name="title">
+            <input type="text" class="form-control" id="title" name="title" required>
         </div>
 
         <div class="mb-3">
@@ -21,7 +21,7 @@
 
         <div class="mb-3">
             <label class="form-label">Gambar</label>
-            <input type="file" class="form-control" id="content" name="image">
+            <input type="file" class="form-control" id="content" name="image" required>
         </div>
 
         <div class="mb-3">

@@ -43,15 +43,6 @@ class PostsController extends Controller
     {
         $data = $request->all();
 
-        if(empty($request->image)){
-            $data['user_id'] = Auth::user()->id;
-            $data['slug'] = Str::slug($request->title);
-
-            Posts::create($data);
-
-            return redirect('posts');
-        }
-
         $data['image'] = $request->file('image')->store('image');
         $data['user_id'] = Auth::user()->id;
         $data['slug'] = Str::slug($request->title);
