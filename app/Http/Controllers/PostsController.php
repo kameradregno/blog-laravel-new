@@ -99,7 +99,7 @@ class PostsController extends Controller
                 'title' => $request['title'],
                 'content' => $request['content'],
                 'slug' => $new_slug,
-                'image' => $request->file('image')->store('berita')
+                'image' => $request->file('image')->store('image')
             ]);
             return redirect("posts/$new_slug");
         }
