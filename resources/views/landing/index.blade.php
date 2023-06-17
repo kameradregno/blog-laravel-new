@@ -45,8 +45,7 @@
                 </p>
 
                 <a href="{{ url("posts/$p->slug") }}" class="btn btn-success">Selengkapnya</a>
-                <a href="{{ url("posts/$p->slug/edit") }}" class="btn btn-warning">Edit</a>
-
+                
             </div>
         </div>
     @endforeach
