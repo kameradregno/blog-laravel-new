@@ -7,7 +7,7 @@
     <article class="blog-post mt-5">
         <h2 class="blog-post-title mb-4 text-center">{{ $data->title }}</h2>
         <p class="text-center fw-bold">
-            {{ Auth::user()->username }}
+            {{ $data->user->username }}
         </p>
         <p class="blog-post-meta text-center">
             <small>

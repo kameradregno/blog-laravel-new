@@ -8,10 +8,11 @@
         <h2 class="blog-post-title mb-4 text-center">{{ $data->title }}</h2>
         <p class="text-center">
             <small>
-                Oleh : {{ Auth::user()->username }}
+                Oleh : {{ $data->user->username }}
             </small>
         </p>
-        <img src="{{ url('storage/' . $data->image) }}" alt="photo" class="card-img-top object-fit-cover h-auto rounded-2" width="100%">
+        <img src="{{ url('storage/' . $data->image) }}" alt="photo" class="card-img-top object-fit-cover h-auto rounded-2"
+            width="100%">
         <p class="fs-5">{!! $data->content !!}</p>
         <p class="blog-post-meta">Created at : {{ date('d M Y', strtotime($data->created_at)) }}</p>
     </article>
@@ -59,21 +60,21 @@
 
             <div id="hiddenComments" style="display: none;">
                 @foreach ($comments->skip(1) as $comment)
-                <div class="my-4">
-                    <h6 class="fw-bold mb-1">&#64;{{ $comment->commentwriter->username }}</h6>
-                    <blockquote class="blockquote mb-0">
-                        <p>
-                            <small>
-                                {{ $comment->comment }}
-                            </small>
-                        </p>
-                        <p class="blockquote-footer mt-2">
-                            <small>
-                                Commented at {{ date('d M Y H:i', strtotime($comment->created_at)) }}
-                            </small>
-                        </p>
-                    </blockquote>
-                </div>
+                    <div class="my-4">
+                        <h6 class="fw-bold mb-1">&#64;{{ $comment->commentwriter->username }}</h6>
+                        <blockquote class="blockquote mb-0">
+                            <p>
+                                <small>
+                                    {{ $comment->comment }}
+                                </small>
+                            </p>
+                            <p class="blockquote-footer mt-2">
+                                <small>
+                                    Commented at {{ date('d M Y H:i', strtotime($comment->created_at)) }}
+                                </small>
+                            </p>
+                        </blockquote>
+                    </div>
                 @endforeach
             </div>
     </div>
