@@ -14,13 +14,13 @@
         </div>
     </div>
     <div class="dropdown">
-        <button class="btn btn-light-outline-dark text-dark dropdown-toggle" type="button" id="dropdownMenuButton1"
-            data-bs-toggle="dropdown" aria-expanded="false">
+        <button class="btn btn-light text-dark dropdown-toggle" style="background-color: white" type="button"
+            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
             @guest
                 Menu
             @else
-                <img src="https://ui-avatars.com/api/?name={{ Auth::user()->username }}" alt="..." class="img-fluid me-1"
-                    style="max-width: 20%; height: auto; border-radius: 50%;">
+                <img src="https://ui-avatars.com/api/?name={{ Auth::user()->username }}" alt="..."
+                    class="img-fluid me-1" style="max-width: 20%; height: auto; border-radius: 50%;">
                 {{ Auth::user()->username }}
             @endguest
         </button>
