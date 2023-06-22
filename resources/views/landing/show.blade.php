@@ -15,8 +15,8 @@
             </small>
         </p>
         @if ($data->image)
-            <img src="{{ url('storage/' . $data->image) }}" alt="photo" class="card-img-top object-fit-cover" width="100%"
-                height="350">
+        <img src="{{ url('storage/' . $data->image) }}" alt ="photo" class="card-img-top rounded-2"
+        style="object-fit: fit; height:auto; width:400px;display:block;margin-left:auto;margin-right:auto" >
         @endif
         <p class="fs-5">{!! $data->content !!}</p>
     </article>
